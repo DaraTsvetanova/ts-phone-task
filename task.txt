@@ -1,0 +1,31 @@
+Define a class that holds information about a mobile 
+phone device: model, manufacturer, price, 
+owner, battery characteristics (model, hours idle and 
+hours talk) and display characteristics 
+(size and number of colors). Define 3 separate 
+classes 
+(class Phone holding instances of the classes 
+Battery and Display).
+
+Assume that model and manufacturer are mandatory 
+(the others are optional).
+
+Add an enumeration BatteryType (Li-Ion, NiMH, NiCd, …) and use it as a new field for the batteries.
+
+Add a method in the Phone class for displaying all 
+information about it.
+
+Create a class Call to hold a call performed through 
+a Phone. It should contain date, time, 
+dialed phone number and duration (in seconds).
+
+Add a property CallHistory in the Phone class to 
+hold a list of the performed calls.
+
+Add methods in the Phone class for adding and 
+deleting calls from the calls history. Add a 
+method to clear the call history.
+
+Add a method that calculates the total price of 
+the calls in the call history. Assume the price per 
+minute is fixed and is provided as a parameter.
