@@ -3,11 +3,12 @@ import { Call } from "../classess/Call";
 export interface PhoneModel {
   model: string;
   manufacturer: string;
-  price: number;
-  owner: string;
-  battery: BatteryModel;
-  display: DisplayModel;
+  price?: number;
+  owner?: string;
+  battery?: BatteryModel;
+  display?: DisplayModel;
   phoneInfo(): string;
+  callHistory?: Call[];
 }
 
 export interface BatteryModel {

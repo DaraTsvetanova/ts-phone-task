@@ -29,7 +29,34 @@ export class Phone implements PhoneModel {
   }
 
   public phoneInfo(): string {
-    return `Phone info: Owner ${this.owner} Manufacturer: ${this.manufacturer} Price: ${this.price} Battery: ${this.battery} Display: ${this.display}`;
+    if (!this.owner) {
+      return `Owner name is missing`;
+    } else if (!this.price) {
+      return `Price is missing`;
+    } else if (!this.battery) {
+      return `Battery type is missing`;
+    } else if (!this.display) {
+      return `Display type is missing`;
+    } else {
+      return `
+    Phone info: 
+    Owner ${this.owner} 
+    Model: ${this.model}
+    Manufacturer: ${this.manufacturer} 
+    Price: ${this.price} 
+    Battery: ${this.battery} 
+    Display: ${this.display}`;
+    }
+  }
+
+  public call(
+    time: number,
+    date: string,
+    phoneNumber: string,
+    duration: number
+  ): void {
+    const newCall = new Call(time, date, phoneNumber, duration);
+    this.addCall(newCall);
   }
 
   public addCall(call: Call) {
@@ -44,7 +71,7 @@ export class Phone implements PhoneModel {
       return;
     }
     this.callHistory = this.callHistory.filter((currentCall) => {
-      if (currentCall.TimeOfCall === call.TimeOfCall) {
+      if (currentCall.timeOfCall === call.timeOfCall) {
         return true;
       }
       return false;
@@ -62,8 +89,8 @@ export class Phone implements PhoneModel {
       let totalTime = 0;
       let totalPrice = 0;
       this.callHistory.forEach((call) => {
-        totalTime += call.Duration;
-        totalPrice += call.Duration * pricePerMinute;
+        totalTime += call.duration;
+        totalPrice += call.duration * pricePerMinute;
       });
       console.log(`The cost is ${totalPrice.toFixed(2)}$`);
     }

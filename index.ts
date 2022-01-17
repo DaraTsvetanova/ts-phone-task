@@ -13,7 +13,7 @@ function main() {
   );
   console.log(phone);
 
-  const currentCall = new Call(10, "11.01.2022", "0885729141", 3);
+  const currentCall = phone.call(10, "11.01.2022", "0885729141", 3);
 
   console.log(currentCall);
 }

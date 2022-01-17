@@ -1,19 +1,19 @@
 export class Call {
-  private timeOfCall: number;
-  private dateOfCall: string;
-  private dialedPhoneNumber: string;
-  private callDuration: number;
+  private _timeOfCall: number;
+  private _dateOfCall: string;
+  private _dialedPhoneNumber: string;
+  private _callDuration: number;
 
-  get TimeOfCall(): number {
+  get timeOfCall(): number {
     return this.timeOfCall;
   }
 
-  get Duration(): number {
-    return this.callDuration;
+  get duration(): number {
+    return this._callDuration;
   }
 
-  set Duration(value: number) {
-    this.callDuration = value;
+  set duration(value: number) {
+    this._callDuration = value;
   }
 
   constructor(
@@ -22,9 +22,9 @@ export class Call {
     dialedPhoneNumber: string,
     callDuration: number
   ) {
-    this.callDuration = callDuration;
-    this.dateOfCall = dateOfCall;
-    this.dialedPhoneNumber = dialedPhoneNumber;
-    this.timeOfCall = timeOfCall;
+    this._callDuration = callDuration;
+    this._dateOfCall = dateOfCall;
+    this._dialedPhoneNumber = dialedPhoneNumber;
+    this._timeOfCall = timeOfCall;
   }
 }
